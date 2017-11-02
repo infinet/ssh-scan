@@ -1,0 +1,33 @@
+{
+    "comment_for_host_section": [
+        "options for host:",
+        "   ping: SSH server might not respond to ping, set ping to 0, then",
+        "         nmap will use -Pn option, when ping is not set, or set to 1,",
+        "         nmap will ping the host first, which will speed up the scan",
+        "         when the target has many hosts, e.g. /24 /16 network.",
+
+        "   port: not all SSH server listen on 22"
+    ],
+
+    "hosts": [
+        {"host": "10.0.0.1", "port": 22},
+        {"host": "192.168.0.0/16", "port": 22},
+        {"host": "ssh1.example.com", "port": 22},
+        {"host": "ssh2.example.com", "port": 22, "ping": 1},
+        {"host": "ssh3.example.com", "port": 3022, "ping": 0}
+    ],
+
+    "comment_for_smtp_section": [
+        "from_addr: some SMTP server require a valid envelope from address, ",
+        "           normaly it is the same as username"
+    ],
+
+    "smtp": {
+        "server": "smtp.example.com",
+        "port": 465,
+        "username": "user@example.com",
+        "password": "mysecret",
+        "from_addr": "user@example.com",
+        "to_addr": "sshadmin@example.com"
+    }
+}
